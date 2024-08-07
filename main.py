@@ -17,3 +17,9 @@ Compute the total available hours per week   = 5* available hours per week day +
 
 
 print available hours (week day, week end, total per week)"""
+
+sleeping_hours = int(input("howlong do you sleep? "))
+working_hours = int(input("howlong do you work? "))
+relaxing_hours = int(input("howlong do you relax? "))
+available_study_hours_per_day = 24 - sleeping_hours - working_hours - relaxing_hours - 3
+print("so you have " + available_study_hours_per_day + " hours to study per day")
