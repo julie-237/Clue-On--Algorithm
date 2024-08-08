@@ -18,6 +18,8 @@ Compute the total available hours per week   = 5* available hours per week day +
 
 print available hours (week day, week end, total per week)"""
 
+import time
+
 sleeping_hours = int(input("howlong do you sleep? "))
 working_hours = int(input("howlong do you work? "))
 relaxing_hours_weekday = int(input("howlong do you relax on weekdays? "))
@@ -28,15 +30,20 @@ available_study_hours_per_weekend = 24 - sleeping_hours - relaxing_hours_weekday
 total_available_hours_per_week = 5*available_study_hours_per_weekday + 2*available_study_hours_per_weekend
 
 print("and you have ", sleeping_hours, " hours to sleep per day")
+time.sleep(2)
 print("and you have ", working_hours, " hours to work per day")
+time.sleep(2)
 print("and you have ", relaxing_hours_weekday, " hours to relax per weekday")
+time.sleep(2)
 
 set_term = "so you have {} hours to study per {}"
 
 print(set_term.format(available_study_hours_per_weekday, "weekday"))
+time.sleep(2)
 print(set_term.format(available_study_hours_per_weekend, "weekend"))
+time.sleep(2)
 print(set_term.format(total_available_hours_per_week, "week"))
-6
+time.sleep(2)
 
 print(f"and you have {relaxing_hours_weekday} hours to relax per day")
 
