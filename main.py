@@ -20,19 +20,23 @@ print available hours (week day, week end, total per week)"""
 
 sleeping_hours = int(input("howlong do you sleep? "))
 working_hours = int(input("howlong do you work? "))
-relaxing_hours = int(input("howlong do you relax? "))
-available_study_hours_per_day = 24 - sleeping_hours - working_hours - relaxing_hours - 3
-print("so you have ", available_study_hours_per_day, " hours to study per day")
+relaxing_hours_weekday = int(input("howlong do you relax on weekdays? "))
+relaxing_hours_weekend = int(input("howlong do you relax on weekends? "))
+
+available_study_hours_per_weekday = 24 - sleeping_hours - working_hours - relaxing_hours_weekday - 3
+available_study_hours_per_weekend = 24 - sleeping_hours - relaxing_hours_weekday - 3
+total_available_hours_per_week = 5*available_study_hours_per_weekday + 2*available_study_hours_per_weekend
 
 print("and you have ", sleeping_hours, " hours to sleep per day")
 print("and you have ", working_hours, " hours to work per day")
-print("and you have ", relaxing_hours, " hours to relax per day")
+print("and you have ", relaxing_hours_weekday, " hours to relax per weekday")
 
-print(f"and you have {relaxing_hours} hours to relax per day")
+set_term = "so you have {} hours to study per {}"
 
-message_template = "and you have {} hours to {} per day"
-print(message_template.format(sleeping_hours, "sleep"))
-print(message_template.format(working_hours, "work"))
-print(message_template.format(relaxing_hours, "relax"))
+print(set_term.format(available_study_hours_per_weekday, "weekday"))
+print(set_term.format(available_study_hours_per_weekend, "weekend"))
+print(set_term.format(total_available_hours_per_week, "week"))
+6
 
-print(sleeping_hours, available_study_hours_per_day)
+print(f"and you have {relaxing_hours_weekday} hours to relax per day")
+
